@@ -73,7 +73,7 @@ for i in range(250):
 allowed_rows = list()
 
 # Game loop
-while True:
+while TSP.available():
     # Check if the screen is closed and quit
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
