@@ -40,7 +40,7 @@ TSP = TSPDecoder(rows=ROWS, columns=COLUMNS)
 grid = np.zeros((ROWS, COLUMNS, 3), dtype=int)
 
 # Game loop
-while TSP.available:
+while TSP.available():
     # Check if the screen is closed and quit
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

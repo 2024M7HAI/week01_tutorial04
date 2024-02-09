@@ -58,7 +58,7 @@ class TSPDecoder:
         self.port = serial.Serial(port, baudrate, timeout=1)
 
         # Initialize the bool to check serial connection is present
-        self.available = True
+        self.availabool = True
 
         # Setup a thread for the frame updating function
         updateThread = threading.Thread(target=self.updateFrame)
@@ -149,11 +149,11 @@ class TSPDecoder:
                     print("Lost sync '%s'" % (l.decode()))
                     self.resync()
 
-                self.available = True
+                self.availabool = True
 
             # Make the serial flag unavailable if serial is closed
             except serial.serialutil.SerialException:
-                self.available = False
+                self.availabool = False
 
     def readFrame(self) -> np.array:
         """
@@ -175,7 +175,7 @@ class TSPDecoder:
         bool
             Boolean representing the availability of the serial port
         """
-        return self.available
+        return self.availabool
 
     def getSerialPort(self) -> serial.tools.list_ports_common.ListPortInfo:
         """
