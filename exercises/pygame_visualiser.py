@@ -22,7 +22,7 @@ pygame.display.set_caption("Haptic Skin visualiser")
 # Initialise the PyGame Clock for timing
 clock = pygame.time.Clock()
 
-while TSP.available():
+while TSP.available:
     # Check if the screen is closed and quit
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

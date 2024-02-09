@@ -37,7 +37,7 @@ for i in range(50):
     grid[row][column] = 1
 
 # Game loop
-while TSP.available():
+while TSP.available:
     # Check if the screen is closed and quit
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
