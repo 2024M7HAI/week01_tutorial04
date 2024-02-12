@@ -67,7 +67,7 @@ class TSPDecoder:
 
         # After starting the serial readout, give the TSP some time to calibrate
         print("Calibrating TSP")
-        time.sleep(5)
+        time.sleep(2)
         print("TSP calibrated, starting datastream")
 
     def resync(self) -> None:
@@ -117,7 +117,7 @@ class TSPDecoder:
             # Only try to read frames when the serial object is available
             try:
                 # Calculate the frame length
-                length = 27 * 19 + 1
+                length = self.rows * self.columns + 1
 
                 # Read data from the serial port
                 res = self.port.read(length)
